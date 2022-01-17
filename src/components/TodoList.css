@@ -1,0 +1,10 @@
+.todoList {
+  list-style-type: none;
+  width: fit-content;
+  margin: auto;
+}
+
+.todoText {
+  font-size: large;
+  font-weight: bold;
+}
