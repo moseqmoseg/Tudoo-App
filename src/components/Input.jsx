@@ -1,13 +1,13 @@
 import { React, useState, useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTodoAction } from "../redux/todoActions";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { TextField, IconButton } from "@mui/material";
+import CreateIcon from "@mui/icons-material/Create";
 
 export default function Input() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
+  const todoItems = useSelector((state) => state.todos.todos);
   const inputRef = useRef(null);
   const addTodo = () => {
     dispatch(addTodoAction({ text: input, id: Date.now() }));
@@ -15,7 +15,7 @@ export default function Input() {
 
   useEffect(() => {
     inputRef.current.focus();
-  }, []);
+  }, [todoItems]);
 
   function valueChecker() {
     if (input.length > 0) {
@@ -29,14 +29,16 @@ export default function Input() {
     <div className="input">
       <TextField
         inputRef={inputRef}
+        InputProps={{ style: { fontFamily: "Sora" } }}
+        InputLabelProps={{ style: { fontSize: 40 } }}
         variant="standard"
-        color="secondary"
+        color="primary"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => (e.key === "Enter" ? valueChecker() : null)}
       />
-      <IconButton color="secondary" onClick={valueChecker}>
-        <AddCircleIcon />
+      <IconButton color="primary" onClick={valueChecker}>
+        <CreateIcon />
       </IconButton>
     </div>
   );

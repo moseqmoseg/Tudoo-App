@@ -1,10 +1,19 @@
 .todoList {
   list-style-type: none;
-  width: fit-content;
+  width: 30%;
   margin: auto;
+  margin-top: 1%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.todo {
+  padding: 1%;
 }
 
 .todoText {
+  font-family: "Sora", sans-serif;
   font-size: large;
   font-weight: bold;
+  color: #5c8ee0;
 }

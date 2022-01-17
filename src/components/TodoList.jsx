@@ -11,18 +11,18 @@ export default function TodoList() {
   const todoItems = useSelector((state) => state.todos.todos);
 
   const listTodos = todoItems.map((todo) => (
-    <li key={todo.id.toString()}>
+    <li className="todo" key={todo.id.toString()}>
       <span className="todoText">{todo.text}</span>
       <span></span>
       <Checkbox
         size="small"
-        color="secondary"
+        color="primary"
         icon={<RadioButtonUncheckedOutlinedIcon />}
         checkedIcon={<RadioButtonCheckedOutlinedIcon />}
         onChange={() => {
           setTimeout(() => {
             dispatch(removeTodoAction({ id: todo.id }));
-          }, 1000);
+          }, 200);
         }}
       />
     </li>
