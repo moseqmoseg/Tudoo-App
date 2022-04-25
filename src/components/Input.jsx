@@ -22,7 +22,7 @@ export default function Input() {
       addTodo();
       setInput("");
     } else {
-      alert("You need to add a Todo bromigo");
+      alert("You need to add a Tudoo bromigo");
     }
   }
   return (
