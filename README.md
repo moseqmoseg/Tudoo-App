@@ -1,8 +1,8 @@
 # Tudo App
 
-Simple tudo App created with React and Redux.
+Simple To-Do App created with React and Redux.
 
-<a href="https://somethingtudo.netlify.app/">
-        <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" 
-             alt="MovieFlix">
-</a>
+The purpose of this project was to purposely over-engineer the system by using Redux for a very simple task. 
+
+
+
